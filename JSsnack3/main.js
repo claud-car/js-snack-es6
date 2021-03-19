@@ -89,16 +89,19 @@ console.log(gattiordinati);
 const maschiopacity = [];
 
 maschi.forEach((item) => {
+  var nuovo
   let opacita = "";
   if (item.eta >= 10) {
     opacita = 1;
+    nuovo = {... item,opacity:1};
   } else {
     opacita = 0.5;
+    nuovo = {...item,opacity:0.5};
   }
 
   var item = {...item,opacity: opacita};
 
-  maschiopacity.push(maschi)
+  maschiopacity.push(nuovo);
 
     $('#gatti3').append(`<li class="azzurro">${item.nome} , gatto di colore ${item.colore}, <i style = "opacity:${opacita};" class="fas fa-ribbon"></i></li><br>`)
 })
@@ -106,21 +109,25 @@ maschi.forEach((item) => {
 const femmineopacity = [];
 
 femmine.forEach((item) => {
+  var nuovo
   let opacita = "";
   if (item.eta >= 10) {
     opacita = 1;
+    nuovo = {... item,opacity:1};
   } else {
     opacita = 0.5;
+    nuovo = {...item,opacity:0.5};
   }
 
   var item = {...item,opacity: opacita};
 
-  femmineopacity.push(femmine)
+  femmineopacity.push(nuovo)
 
   $('#gatti3').append(`<li class="rosa">${item.nome} , gatto di colore ${item.colore}, <i style = "opacity:${opacita};" class="fas fa-ribbon"></i></li><br>`)
 })
 
-
+console.log(maschiopacity);
+console.log(femmineopacity);
 
 
 
